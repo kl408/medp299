@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>A-Frame Demo 1</title>
+        <!-- A-frame script -->
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    </head>
+
+ 
+
+    <body>
+        <!-- To place a box in our world -->
+        <a-scene background="color: #0D1218">
+
+            <!-- Always put assets first -->
+            <a-assets>
+                
+                <!-- Just trying to learn -->
+                <img id="eggs" src="img/hardboiledeggs.jpeg"/>
+
+                <!-- from Sketchfab, denis_cliofas -->
+                <a-asset-item id="phone_booth" src="models/post_apocalyptic_phone_booth/scene.gltf"></a-asset-item>
+
+                <!-- from Sketchfab, 3dhdscan -->
+                <a-asset-item id="grass" src="models/simple_grass_chunks/scene.gltf"></a-asset-item>
+                
+            </a-assets>
+
+            <a-camera position="0 2.3 0"></a-camera>
+            <!--
+            <a-box
+                src="#eggs"
+                color="#F4E79F"
+                position="0 2 -5"
+                rotation="0 45 45">> 
+            </a-box>
+            -->
+
+            <!-- xyz, Measurements and position are set in meters-->
+            
+            <!--
+                    x-axis rotation - 33°,y-axis - 45°, z-axis - 0°
+                -->
+                <!--
+                    x-axis shrunk by 0.5, y-axis stretched by 3,
+                    z-axis unchanged
+            -->
+
+            <!--
+            <a-box 
+                color="#F49FBA"
+                position="2 4 -3"
+                rotation="33 45 0"
+                scale="0.5 2 1"
+                >
+            </a-box>
+            -->
+
+            <!-- Light source for phone box -->
+            <a-sphere 
+                color="#F49FBA"
+                position="3 4 -3"
+                radius="0.05"
+                light="type: point; intensity: 1.5; distance: 40; decay: 5; color: #FFCC5D">
+            </a-sphere>
+
+            <!-- light="type: ambient; color: red" -->
+
+            
+            <!-- <a-entity light="type: directional; color: #F4E79F; intensity: 0.5" position="-1 1 0"></a-entity> -->
+
+            
+            
+
+
+            <!-- Phone booth -->
+            <a-entity gltf-model="#phone_booth" scale="1.5 1.5 1.5" position="2 0.4 -5"> </a-entity>
+            <!-- Grass -->
+            <a-entity gltf-model="#grass" scale="0.4 0.2 0.4" position="-20 0 -15"> </a-entity>
+
+            <!-- Bubbles -->
+            <!-- Animation by @stemkoski via GitHub -->
+            
+            <a-entity id="glowPulse" position="0.3 2 -4"
+                animation__spin="property: rotation; from: 0 0 0; to: 0 360 0; dur: 4000; loop: true; easing: linear;">
+                <a-sphere color="#FFCC5D" radius="0.02" material="emissive: yellow; emissive-intensity: 0.5;"
+                animation__pulse="property: material.emissiveIntensity; from: 0.5; to: 0.0; dur: 1000; loop: true; dir: alternate; easing: linear;"></a-sphere>
+                <a-sphere color="#FFCC5D" radius="0.06" color="#FFCC5D" material="transparent: true; opacity: 1.0; alphaTest: 0.01;"
+                animation__pulse="property: material.opacity; from: 1.0; to: 0.0; dur: 1000; loop: true; dir: alternate; easing: linear;"></a-sphere>
+            </a-entity>
+            
+
+
+            <a-sphere color = "black" position="0.5 2.3 -2" radius="0.05" material="emissive: #FFCC5D; emissive-intensity: 1.5;"
+		    animation__pulse="property: material.emissiveIntensity; from: 0.5; to: 0.0; dur: 1000; loop: true; dir: alternate; easing: linear;"></a-sphere>
+            
+        </a-scene>
+    </body>
+
+
+
+</html>
