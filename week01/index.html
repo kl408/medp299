@@ -1,101 +1,80 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>A-Frame Demo 1</title>
-        <!-- A-frame script -->
-        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <meta charset="utf-8">
+        <title>Kristy's MEDP 299 Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Homepage for my XR Design & Dev class" />
+        <meta name="author" content="Kristy" />
+        <!-- CSS file -->
+        <link rel="stylesheet" href="style.css"/>
+         <!-- Google Fonts -->
+         <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+         <!-- Favicon -->
+         <link rel="icon" href="img/favicon.ico">
+         <!-- Animations -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     </head>
 
- 
-
     <body>
-        <!-- To place a box in our world -->
-        <a-scene background="color: #0D1218">
-
-            <!-- Always put assets first -->
-            <a-assets>
-                
-                <!-- Just trying to learn -->
-                <img id="eggs" src="img/hardboiledeggs.jpeg"/>
-
-                <!-- from Sketchfab, denis_cliofas -->
-                <a-asset-item id="phone_booth" src="models/post_apocalyptic_phone_booth/scene.gltf"></a-asset-item>
-
-                <!-- from Sketchfab, 3dhdscan -->
-                <a-asset-item id="grass" src="models/simple_grass_chunks/scene.gltf"></a-asset-item>
-                
-            </a-assets>
-
-            <a-camera position="0 2.3 0"></a-camera>
-            <!--
-            <a-box
-                src="#eggs"
-                color="#F4E79F"
-                position="0 2 -5"
-                rotation="0 45 45">> 
-            </a-box>
-            -->
-
-            <!-- xyz, Measurements and position are set in meters-->
-            
-            <!--
-                    x-axis rotation - 33°,y-axis - 45°, z-axis - 0°
-                -->
-                <!--
-                    x-axis shrunk by 0.5, y-axis stretched by 3,
-                    z-axis unchanged
-            -->
-
-            <!--
-            <a-box 
-                color="#F49FBA"
-                position="2 4 -3"
-                rotation="33 45 0"
-                scale="0.5 2 1"
-                >
-            </a-box>
-            -->
-
-            <!-- Light source for phone box -->
-            <a-sphere 
-                color="#F49FBA"
-                position="3 4 -3"
-                radius="0.05"
-                light="type: point; intensity: 1.5; distance: 40; decay: 5; color: #FFCC5D">
-            </a-sphere>
-
-            <!-- light="type: ambient; color: red" -->
-
-            
-            <!-- <a-entity light="type: directional; color: #F4E79F; intensity: 0.5" position="-1 1 0"></a-entity> -->
-
-            
-            
+        <!-- navigation -->
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">Dropdown
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="week01/index.html">A-Frame Environment</a>
+              </div>
+            </div>
+            <a href="https://kristylau86.wixsite.com/mysite" target="_blank">Blog</a>
+        </div>
 
 
-            <!-- Phone booth -->
-            <a-entity gltf-model="#phone_booth" scale="1.5 1.5 1.5" position="2 0.4 -5"> </a-entity>
-            <!-- Grass -->
-            <a-entity gltf-model="#grass" scale="0.4 0.2 0.4" position="-20 0 -15"> </a-entity>
+          <!--
+        <div class="topnav">
+            <a href="#home">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+            <a href="https://kristylau86.wixsite.com/mysite" target="_blank">Blog</a>
+        </div>
+    -->
 
-            <!-- Bubbles -->
-            <!-- Animation by @stemkoski via GitHub -->
-            
-            <a-entity id="glowPulse" position="0.3 2 -4"
-                animation__spin="property: rotation; from: 0 0 0; to: 0 360 0; dur: 4000; loop: true; easing: linear;">
-                <a-sphere color="#FFCC5D" radius="0.02" material="emissive: yellow; emissive-intensity: 0.5;"
-                animation__pulse="property: material.emissiveIntensity; from: 0.5; to: 0.0; dur: 1000; loop: true; dir: alternate; easing: linear;"></a-sphere>
-                <a-sphere color="#FFCC5D" radius="0.06" color="#FFCC5D" material="transparent: true; opacity: 1.0; alphaTest: 0.01;"
-                animation__pulse="property: material.opacity; from: 1.0; to: 0.0; dur: 1000; loop: true; dir: alternate; easing: linear;"></a-sphere>
-            </a-entity>
-            
+
+        
+        <!-- 
+        <nav id="nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="assignments.html">Projects</a></li>
+                <li><a href="https://kristylau86.wixsite.com/mysite" target="_blank">Blog</a></li> 
+            </ul>
+        </nav>
+        -->
+        
+
+        <header id="home">
+            <h1>Kristy's MEDP299 Page</h1>
+            <h2>Welcome!</h2>
+            <p>Spring '22 | CS Major, Media Studies Minor | Skincare and sweets enthusiast</p>
+            <img src="imgs/me.svg" id="kristy" style="width: 20%; height: 20%;"/>
+        </header>
 
 
-            <a-sphere color = "black" position="0.5 2.3 -2" radius="0.05" material="emissive: #FFCC5D; emissive-intensity: 1.5;"
-		    animation__pulse="property: material.emissiveIntensity; from: 0.5; to: 0.0; dur: 1000; loop: true; dir: alternate; easing: linear;"></a-sphere>
-            
-        </a-scene>
+        <!-- Animations -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+           AOS.init();
+       </script>
     </body>
-
-
-
 </html>
